@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw6sqsga0mk2a"]
+
+[ext_resource type="Script" path="res://node.gd" id="1_48brh"]
+[ext_resource type="AudioStream" uid="uid://dx77q23f7cq06" path="res://Music/The Most Prestigious Dumpster.wav" id="2_ocdsx"]
+[ext_resource type="AudioStream" uid="uid://415tjov1sho" path="res://Music/From the Ashes.wav" id="3_dnijt"]
+[ext_resource type="AudioStream" uid="uid://ckgkkimfanleh" path="res://Music/Neoclassic.wav" id="4_4kavu"]
+[ext_resource type="AudioStream" uid="uid://dhg1snp12ldhy" path="res://Music/SFX/14 Fortress Hill Rd 2.mp3" id="5_ms54e"]
+[ext_resource type="AudioStream" uid="uid://bhr062nd16p7c" path="res://Music/SFX/Hit.mp3" id="6_ets0l"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_48brh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ocdsx")
+volume_db = -10.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dnijt")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4kavu")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ms54e")
+volume_db = -15.0
+mix_target = 1
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ets0l")
+volume_db = -14.0
+pitch_scale = 0.6

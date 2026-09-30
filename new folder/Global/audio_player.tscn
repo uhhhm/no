@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu7benohxorpg"]
+
+[ext_resource type="Script" path="res://new folder/Global/audio_player.gd" id="1_8dvya"]
+[ext_resource type="AudioStream" uid="uid://dx77q23f7cq06" path="res://Music/The Most Prestigious Dumpster.wav" id="1_ewyfx"]
+
+[node name="AudioPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ewyfx")
+script = ExtResource("1_8dvya")

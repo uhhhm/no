@@ -1,0 +1,162 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpc2f5uohhxca"]
+
+[ext_resource type="Script" path="res://Menu/menu.gd" id="1_bfifl"]
+[ext_resource type="Texture2D" uid="uid://b21lm2mon8p5m" path="res://Menu/Untitled_Artwork 10.png" id="2_gjgyo"]
+[ext_resource type="FontFile" uid="uid://dsn4yrmuigu73" path="res://LEMONMILK-Medium.otf" id="2_rxbif"]
+[ext_resource type="Texture2D" uid="uid://dwgklimfaudp6" path="res://Menu/Untitled_Artwork 9.png" id="3_vtnem"]
+[ext_resource type="Texture2D" uid="uid://b0yt84g771m1t" path="res://Menu/Untitled_Artwork 11.png" id="4_5d8qr"]
+[ext_resource type="Texture2D" uid="uid://bjt523rorpgqs" path="res://Menu/Untitled_Artwork 12.png" id="5_3f54k"]
+[ext_resource type="Texture2D" uid="uid://bvpddfuroswyr" path="res://Menu/Untitled_Artwork 13.png" id="7_76e1p"]
+[ext_resource type="Script" path="res://Menu/character_body_2d.gd" id="7_op74p"]
+[ext_resource type="Texture2D" uid="uid://dcnteadhi68xm" path="res://Untitled_Artwork 8.png" id="8_scv12"]
+
+[sub_resource type="Theme" id="Theme_3k266"]
+/colors/1 = Color(0, 0, 0, 0.592157)
+/constants/sdg = 2
+
+[node name="Node2D" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_bfifl")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -2
+
+[node name="UntitledArtwork9" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2, 2)
+scale = Vector2(1.7, 1.582)
+texture = ExtResource("3_vtnem")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(1.2, 1.2)
+motion_scale = Vector2(0.85, 0.85)
+
+[node name="UntitledArtwork10" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(50, -100)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_gjgyo")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
+motion_scale = Vector2(0.96, 0.96)
+
+[node name="UntitledArtwork11" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(0, 50)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("4_5d8qr")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="UntitledArtwork13" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+modulate = Color(1, 1, 1, 0.901961)
+z_index = 4
+position = Vector2(0, 99)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("7_76e1p")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+visible = false
+script = ExtResource("7_op74p")
+
+[node name="UntitledArtwork8" type="Sprite2D" parent="CharacterBody2D"]
+z_index = 99
+position = Vector2(601, 349)
+scale = Vector2(0.164319, 0.168067)
+texture = ExtResource("8_scv12")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(0.28, 0.28)
+limit_left = -2200
+limit_top = -1300
+limit_right = 2200
+limit_bottom = 1300
+position_smoothing_speed = 0.1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 353.0
+offset_top = 217.0
+offset_right = 846.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("2_rxbif")
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/normal_font_size = 50
+text = "Alpha 1.0.2(T)N(r)"
+tab_size = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.642
+anchor_bottom = 0.571
+offset_left = -121.0
+offset_top = -44.0
+offset_right = 402.416
+offset_bottom = 272.992
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+size_flags_horizontal = 0
+theme_override_constants/separation = 80
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 1
+theme_override_fonts/font = ExtResource("2_rxbif")
+theme_override_font_sizes/font_size = 110
+text = "New Game"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_rxbif")
+theme_override_font_sizes/font_size = 90
+text = "Quit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 344.0
+offset_top = 236.0
+offset_right = 894.0
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+
+[node name="UntitledArtwork12" type="Sprite2D" parent="."]
+z_index = 99
+position = Vector2(590, 160)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("5_3f54k")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 928.0
+offset_top = 564.0
+offset_right = 1428.0
+offset_bottom = 719.0
+scale = Vector2(0.3, 0.3)
+theme = SubResource("Theme_3k266")
+theme_override_fonts/font = ExtResource("2_rxbif")
+theme_override_font_sizes/font_size = 110
+text = "Credits"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

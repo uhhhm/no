@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgtxlg1gy2mbh"]
+
+[ext_resource type="Script" path="res://progress_bar.gd" id="1_4w0sa"]
+[ext_resource type="Texture2D" uid="uid://b5f5qk2q3i4ro" path="res://otherassets/Icon.png" id="2_cc6lo"]
+[ext_resource type="Texture2D" uid="uid://chrw274q2gept" path="res://otherassets/Bar.png" id="3_rgls8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fww2t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkpcb"]
+bg_color = Color(0.556863, 0.490196, 0.552941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b77h1"]
+bg_color = Color(0.164706, 0.117647, 0.176471, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20i4i"]
+bg_color = Color(0.921569, 0.956863, 1, 1)
+
+[node name="Healthbar" type="ProgressBar"]
+z_index = 5
+offset_left = 30.0
+offset_right = 270.0
+offset_bottom = 15.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_fww2t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pkpcb")
+value = 60.0
+show_percentage = false
+script = ExtResource("1_4w0sa")
+
+[node name="DMGbar" type="ProgressBar" parent="."]
+z_index = -1
+layout_mode = 1
+offset_right = 240.0
+offset_bottom = 15.0
+theme_override_styles/background = SubResource("StyleBoxFlat_b77h1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_20i4i")
+value = 80.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Bar" type="Sprite2D" parent="."]
+position = Vector2(74, 36.4)
+scale = Vector2(0.212, 0.212)
+texture = ExtResource("3_rgls8")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-49, 8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_cc6lo")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

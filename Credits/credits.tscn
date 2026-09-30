@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://s6nwdo8ubm1t"]
+
+[ext_resource type="Texture2D" uid="uid://djjmm3bvq1hmo" path="res://Credits/Untitled_Artwork 14.png" id="1_i1ym2"]
+[ext_resource type="Script" path="res://Credits/credits.gd" id="1_wte7v"]
+[ext_resource type="FontFile" uid="uid://dsn4yrmuigu73" path="res://LEMONMILK-Medium.otf" id="3_1axav"]
+
+[sub_resource type="Animation" id="Animation_lpm61"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1548, 2279)]
+}
+
+[sub_resource type="Animation" id="Animation_8nyup"]
+resource_name = "credits"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 13.8667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 2300), Vector2(800, -2100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7iwl7"]
+_data = {
+"RESET": SubResource("Animation_lpm61"),
+"credits": SubResource("Animation_8nyup")
+}
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_wte7v")
+
+[node name="UntitledArtwork14" type="Sprite2D" parent="."]
+position = Vector2(2089, 1100)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_i1ym2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../UntitledArtwork14")
+libraries = {
+"": SubResource("AnimationLibrary_7iwl7")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1548.0
+offset_top = 2279.0
+offset_right = 7548.0
+offset_bottom = 4519.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_1axav")
+theme_override_font_sizes/normal_font_size = 55
+text = "Credits
+
+HRY
+Lead Music / Development & Mechanics / Lead World Building
+
+Tejas Chan
+Development / World Building
+
+Nerrawbot#
+Lead Visuals / World Building / Development
+
+the1stKaiser
+Lead Testing / World Building
+
+Others
+
+Writing / World-building:
+
+Bryan Zhu
+Lincoln Liu
+Jonathan Lang
+Jonathan Yuen
+
+Inspirations / Support
+
+Oliver Chan
+Peter Wei
+Samson Chan
+"
+fit_content = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2122, 1119)
+zoom = Vector2(0.3, 0.3)

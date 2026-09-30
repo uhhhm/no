@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dx77q23f7cq06"
+path="res://.godot/imported/The Most Prestigious Dumpster.wav-d382610075d236f8a782e92c00d98cab.sample"
+
+[deps]
+
+source_file="res://Music/The Most Prestigious Dumpster.wav"
+dest_files=["res://.godot/imported/The Most Prestigious Dumpster.wav-d382610075d236f8a782e92c00d98cab.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

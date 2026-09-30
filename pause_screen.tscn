@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://cso73lwq4abnq"]
+
+[ext_resource type="Script" path="res://pause_screen.gd" id="1_brbl1"]
+[ext_resource type="FontFile" uid="uid://dsn4yrmuigu73" path="res://LEMONMILK-Medium.otf" id="1_cad6y"]
+
+[node name="PauseScreen" type="Control"]
+process_mode = 3
+z_index = 99
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_brbl1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 99
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.679
+anchor_top = 0.72
+anchor_right = 0.679
+anchor_bottom = 0.72
+offset_left = -6750.21
+offset_top = -4554.56
+offset_right = 3249.79
+offset_bottom = 5445.44
+color = Color(0.0470588, 0.054902, 0.105882, 0.701961)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = -1040.0
+offset_top = -700.0
+offset_right = 635.0
+offset_bottom = -92.0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(1300, 1000)
+
+[node name="V" type="VBoxContainer" parent="CenterContainer"]
+z_index = 100
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/V"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_cad6y")
+theme_override_font_sizes/font_size = 200
+text = "Paused
+"
+
+[node name="Label2" type="Label" parent="CenterContainer/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_cad6y")
+theme_override_font_sizes/font_size = 40
+text = "KNUTS Studios .//V1.0.2(t)N(r)"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/V"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Resume" type="Button" parent="CenterContainer/V/HBoxContainer"]
+z_index = 100
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_cad6y")
+theme_override_font_sizes/font_size = 120
+text = "Resume Game"
+
+[node name="Quit" type="Button" parent="CenterContainer/V/HBoxContainer"]
+z_index = 100
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_cad6y")
+theme_override_font_sizes/font_size = 120
+text = "Quit Game"
+
+[connection signal="pressed" from="CenterContainer/V/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/V/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

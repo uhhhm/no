@@ -1,0 +1,295 @@
+[gd_scene load_steps=24 format=3 uid="uid://bji47m5onop24"]
+
+[ext_resource type="Script" path="res://new folder/Global/transition.gd" id="1_4tvxi"]
+[ext_resource type="Script" path="res://globalvariables.gd" id="2_o4c7n"]
+[ext_resource type="Texture2D" uid="uid://bgkm5q880slfm" path="res://areatitles/EmberAreaTitle/IMG_1890.PNG" id="2_xgxsu"]
+[ext_resource type="Texture2D" uid="uid://b83vscf6ufno6" path="res://areatitles/EmberAreaTitle/IMG_1891.PNG" id="3_5g6y8"]
+[ext_resource type="Texture2D" uid="uid://dby24p841a446" path="res://areatitles/IMG_1753.PNG" id="3_qx6ap"]
+[ext_resource type="AudioStream" uid="uid://b3yu8kemr375y" path="res://Music/SFX/minecraft-rare-achievement.mp3" id="4_axq5x"]
+[ext_resource type="Texture2D" uid="uid://deqf58pke00ug" path="res://areatitles/EmberAreaTitle/IMG_1892.PNG" id="4_sujgy"]
+[ext_resource type="VideoStream" path="res://new folder/Global/FDCET (1).ogv" id="5_6oos0"]
+[ext_resource type="Texture2D" uid="uid://dv7lkc3fi5q18" path="res://areatitles/EmberAreaTitle/IMG_1893.PNG" id="5_lds2t"]
+[ext_resource type="Texture2D" uid="uid://bpeqoal15tvtp" path="res://areatitles/EmberAreaTitle/IMG_1894.PNG" id="6_t7rmr"]
+[ext_resource type="Texture2D" uid="uid://dbqmhb8uvnfa8" path="res://areatitles/EmberAreaTitle/IMG_1895.PNG" id="7_x07br"]
+[ext_resource type="Texture2D" uid="uid://b5ieqnhirv15a" path="res://areatitles/EmberAreaTitle/IMG_1896.PNG" id="8_j6au8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ch6a3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xgxsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5g6y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sujgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lds2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t7rmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x07br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j6au8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_d326b"]
+resource_name = "Ember"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.833333, 2.86667, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimatedSprite2D:sprite_frames")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_ch6a3")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.216667, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 2.60001, 2.66667, 2.73334, 2.80001, 2.86667, 2.93334, 3.00001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_1kuv8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_ch6a3")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v320a"]
+_data = {
+"Ember": SubResource("Animation_d326b"),
+"RESET": SubResource("Animation_1kuv8")
+}
+
+[sub_resource type="Animation" id="Animation_1u2hs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k4jtw"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_njsjv"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.5, 1.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lpgya"]
+_data = {
+"RESET": SubResource("Animation_1u2hs"),
+"fade_out": SubResource("Animation_k4jtw"),
+"new_animation": SubResource("Animation_njsjv")
+}
+
+[sub_resource type="Animation" id="Animation_7le20"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Img1753:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5m05k"]
+resource_name = "areatitle"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Img1753:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.83333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3utm"]
+_data = {
+"RESET": SubResource("Animation_7le20"),
+"areatitle": SubResource("Animation_5m05k")
+}
+
+[node name="Transition" type="CanvasLayer"]
+layer = 98
+script = ExtResource("1_4tvxi")
+
+[node name="EmberArea" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlayer2")
+libraries = {
+"": SubResource("AnimationLibrary_v320a")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 4000.0
+offset_bottom = 3000.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_lpgya")
+}
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_o4c7n")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Node")
+libraries = {
+"": SubResource("AnimationLibrary_w3utm")
+}
+
+[node name="Img1753" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(580, 160)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_qx6ap")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_axq5x")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1088.0
+scale = Vector2(0.6, 0.6)
+mouse_filter = 2
+stream = ExtResource("5_6oos0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(580, 120)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_ch6a3")
+frame = 2

@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# macOS metadata
+.DS_Store
+
+# Generated release exports
+/Emberlight Alpha v1.0.2/
+/Emberlight V1.0.2(t)N(r).dmg
+/emberlight v1.0.2.zip
